@@ -9,7 +9,7 @@
         <!--  wrap in div, then ngif to display if onlyOdd is true -->
         <!-- !Odd numbers -->
         <!-- ! ngClass - conditional styling, if not even -->
-        <!-- <div *ngIf="onlyOdd">
+        <div *ngIf="onlyOdd">
           <li
             class="list-group-item"
             *ngFor="let odd of oddNumbers"
@@ -20,7 +20,7 @@
           >
             {{ odd }}
           </li>
-        </div> -->
+        </div>
 
         <!-- !Even numbers -->
         <!-- <div *ngIf="!onlyOdd">
@@ -56,6 +56,13 @@
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">
         Style me with BETTER Directive!
       </p>
+
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>Value is Default</p>
+      </div>
 
       <ng-template [ngIf]="onlyOdd">
         <p>Only Odd</p>
